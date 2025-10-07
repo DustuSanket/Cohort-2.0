@@ -1,0 +1,94 @@
+@font-face {
+  font-family: sprintura;
+  src: url(./Sprintura\ Demo.otf);
+}
+@font-face {
+  font-family: rock;
+  src: url(./EagleHorizonP.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#main {
+  font-family: sprintura;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-image: url(https://wallpapercave.com/wp/wp9204619.jpg);
+  background-size: cover;
+}
+#main a {
+  color: #111;
+  text-decoration: none;
+  margin-right: 50px;
+}
+#nav {
+  padding: 30px 60px;
+}
+#main > h1 {
+  padding-left: 50px;
+  font-size: 235px;
+}
+#main #btmleft {
+  width: 250px;
+  position: absolute;
+  left: 3.5%;
+  bottom: 17%;
+}
+#btmleft > p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  padding: 9px;
+}
+#btmleft > h3 {
+  font-size: 16px;
+  padding: 9px;
+}
+#footer {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  padding: 20px 50px;
+  bottom: 0%;
+  width: 100%;
+  font-size: 14px;
+}
+#footer > a {
+  text-decoration: underline;
+  color: #e2e3e8;
+}
+#footer > h3 {
+  font-family: rock;
+  font-size: 20px;
+  font-weight: 600;
+}
+#main > img {
+  position: absolute;
+  height: 280px;
+}
+
+#main #img1 {
+  height: 350px;
+  top: 35%;
+  right: 25%;
+  z-index: 2;
+}
+
+#main #img2 {
+  height: 240px;
+  top: 57%;
+  right: 39%;
+  z-index: 1;
+}
+
+#main #img3 {
+  top: 47%;
+  right: 46%;
+  z-index: 0;
+}

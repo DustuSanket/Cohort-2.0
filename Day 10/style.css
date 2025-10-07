@@ -1,0 +1,39 @@
+@font-face {
+  font-family: name;
+  src: url(AlexBrush-Regular.ttf);
+}
+@font-face {
+  font-family: joan;
+  src: url(Joan-Regular.ttf);
+}
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: joan;
+
+html,
+body {
+  width: 100%;
+  background-color: rgb(41, 41, 41);
+}
+#name {
+  font-family: name;
+  font-weight: 600;
+  font-size: 70px;
+}
+.profile {
+  background-color: rgba(21, 255, 255, 0.804);
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.contact {
+  background-color: rgba(0, 255, 76, 0.804);
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}

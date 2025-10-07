@@ -1,0 +1,73 @@
+@font-face {
+  font-family: apple;
+  src: url(./sf-pro-text_regular.woff2);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+#main {
+  height: 100%;
+  width: 100%;
+  font-family: apple;
+  background-color: #222;
+  padding: 30px 40px;
+  padding-top: 70px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+#main > h1 {
+  position: absolute;
+  top: 20px;
+  left: 45%;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.card {
+  width: 200px;
+  height: 280px;
+  padding: 20px 30px;
+  background-color: rgb(210, 210, 210);
+  border-radius: 30px;
+  box-shadow: -9px 10px 30px rgba(174, 172, 172, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+}
+.card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border: solid 1px #000;
+  border-radius: 50%;
+}
+.card h1 {
+  font-size: 18px;
+  font-weight: 600;
+}
+.card p {
+  font-size: 12px;
+  color: #777;
+}
+.card button {
+  border: solid 2px royalblue;
+  padding: 10px 25px;
+  border-radius: 50px;
+  background-color: transparent;
+  color: royalblue;
+}
+
+.card button:hover {
+  background-color: royalblue;
+  color: #fff;
+  cursor: pointer;
+}
