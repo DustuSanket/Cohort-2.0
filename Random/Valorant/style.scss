@@ -49,6 +49,24 @@ main {
         border-radius: 8px;
       }
     }
+    #nav-right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      #search {
+        padding: 10px 10px;
+        color: white;
+        i {
+          font-size: 25px;
+          font-weight: 500;
+        }
+
+        border: none;
+        border-radius: 16px;
+        background-color: #2b2a29;
+      }
+    }
   }
   section {
     background-color: yellow;

@@ -47,6 +47,23 @@ main header nav button {
   text-align: center;
   border-radius: 8px;
 }
+main header #nav-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+main header #nav-right #search {
+  padding: 10px 10px;
+  color: white;
+  border: none;
+  border-radius: 16px;
+  background-color: #2b2a29;
+}
+main header #nav-right #search i {
+  font-size: 25px;
+  font-weight: 500;
+}
 main section {
   background-color: yellow;
   grid-area: content;
