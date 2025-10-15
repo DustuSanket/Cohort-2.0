@@ -2,11 +2,15 @@
   font-family: valo;
   src: url(./f855f545-9ff1-433c-912f-c58bd2d71d28.woff2);
 }
+@font-face {
+  font-family: valo2;
+  src: url(./a077222b-f869-4748-8eda-79372b7c40a1.woff2);
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: valo;
+  font-family: valo2;
   font-weight: 300;
 }
 html,
@@ -53,18 +57,55 @@ main {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 20px;
+      padding: 20px;
+      gap: 2px;
+
       #search {
-        padding: 10px 10px;
+        padding: 8px 8px;
         color: white;
         i {
           font-size: 25px;
           font-weight: 500;
         }
-
         border: none;
         border-radius: 16px;
         background-color: #2b2a29;
+      }
+      #globe {
+        padding: 8px 8px;
+        color: white;
+        i {
+          font-size: 17px;
+          font-weight: 500;
+        }
+        border: none;
+        border-radius: 8px;
+        background-color: transparent;
+      }
+      #play {
+        padding: 8px 14px;
+        margin-left: 8px;
+        color: black;
+
+        font-size: 14px;
+        font-weight: 100;
+
+        border: none;
+        border-radius: 10px;
+        background: linear-gradient(to right, #ff3945, #ff7361);
+      }
+
+      #search:hover {
+        cursor: pointer;
+      }
+      #globe:hover {
+        background-color: #2b2a29;
+        cursor: pointer;
+      }
+      #play:hover {
+        color: #ff454c;
+        cursor: pointer;
+        transition: all 0.5s;
       }
     }
   }
