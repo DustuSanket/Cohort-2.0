@@ -1,0 +1,109 @@
+@font-face {
+  font-family: santoshi;
+  src: url(./63cffc20aa8997095067596f_Satoshi-Light.woff);
+}
+@font-face {
+  font-family: head;
+  src: url(./63cffc0a3942456e003bc265_Chillax-Regular.woff);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+body {
+  font-family: santoshi;
+  background-color: #121212;
+}
+@mixin felx_column($gap: 0px) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+
+main {
+  @include felx_column();
+  width: 100%;
+
+  section.view1 {
+    width: 100%;
+    padding: 1rem;
+    @include felx_column(1rem);
+
+    #top {
+      img {
+        width: 100%;
+        border-radius: 10px;
+        object-fit: cover;
+      }
+    }
+
+    #bottom {
+      color: rgb(247, 233, 233);
+      background-color: #1e1e1e;
+      padding: 3rem;
+      gap: 2rem;
+      border-radius: 10px;
+      @include felx_column(4rem);
+      justify-content: space-between;
+
+      #text {
+        h1 {
+          font-size: 3.5rem;
+          font-family: head;
+          font-weight: 500;
+          text-transform: uppercase;
+        }
+        p {
+          font-size: 1.25rem;
+          opacity: 0.6;
+          line-height: 2rem;
+        }
+        button {
+          background-color: transparent;
+          width: fit-content;
+          color: rgb(247, 233, 233);
+          border: none;
+          font-size: 0.8rem;
+          font-weight: 700;
+          word-spacing: 6px;
+          text-transform: uppercase;
+          padding: 1rem 0rem;
+          opacity: 0.8;
+
+          i {
+            width: fit-content;
+            border-radius: 50%;
+            font-size: 1.4rem;
+            font-weight: 100;
+            color: #999999;
+            border: 1px solid #656565;
+            background-color: #292929;
+            padding: 6px 6px;
+            margin-top: 7px;
+            margin-right: 7px;
+          }
+        }
+      }
+    }
+    #bottom > p {
+      font-size: 0.85rem;
+      font-weight: 600;
+      opacity: 0.9;
+    }
+  }
+}
+
+@media (min-width: 900px) {
+  main {
+    section.view1 {
+      flex-direction: row;
+      padding: 1rem 4rem;
+    }
+  }
+}
