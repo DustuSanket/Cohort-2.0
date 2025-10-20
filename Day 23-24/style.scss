@@ -26,9 +26,15 @@ body {
   gap: $gap;
 }
 
+section {
+  max-width: 1600px;
+}
+
 main {
   @include felx_column();
   width: 100%;
+  align-items: center;
+  color: rgb(247, 233, 233);
 
   section.view1 {
     width: 100%;
@@ -44,17 +50,15 @@ main {
     }
 
     #bottom {
-      color: rgb(247, 233, 233);
       background-color: #1e1e1e;
-      padding: 3rem;
+      padding: 2rem;
       gap: 2rem;
       border-radius: 10px;
       @include felx_column(4rem);
-      justify-content: space-between;
 
       #text {
         h1 {
-          font-size: 3.5rem;
+          font-size: 2.3rem;
           font-family: head;
           font-weight: 500;
           text-transform: uppercase;
@@ -97,13 +101,91 @@ main {
       opacity: 0.9;
     }
   }
+  section.view2 {
+    width: 100%;
+    padding: 1rem;
+    @include felx_column(1rem);
+
+    #top,
+    #bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      text-align: center;
+
+      .element {
+        padding: 0.5rem;
+        small {
+          opacity: 0.6;
+          text-transform: uppercase;
+          font-weight: 500;
+          font-size: 1.1rem;
+          line-height: 2.5rem;
+        }
+        h1 {
+          font-size: 2.1rem;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+  section.view3 {
+    width: 100%;
+    padding: 1rem;
+    @include felx_column(1rem);
+
+    #top {
+      img {
+        width: 100%;
+        border-radius: 10px;
+        object-fit: cover;
+      }
+    }
+    #bottom {
+      background-color: #1e1e1e;
+      padding: 2rem;
+      gap: 2rem;
+      border-radius: 10px;
+      @include felx_column(4rem);
+    }
+  }
 }
 
 @media (min-width: 900px) {
   main {
     section.view1 {
       flex-direction: row;
-      padding: 1rem 4rem;
+      padding: 1rem 2rem;
+
+      #top,
+      #bottom {
+        width: 50%;
+      }
+      #bottom {
+        justify-content: space-between;
+        padding: 3rem;
+
+        #text {
+          h1 {
+            font-size: 3.5rem;
+          }
+        }
+      }
+    }
+    section.view2 {
+      flex-direction: row;
+      padding: 1rem 2rem;
+      #top,
+      #bottom {
+        width: 50%;
+
+        .element {
+          h1 {
+            font-size: 3.5rem;
+            font-weight: 600;
+          }
+        }
+      }
     }
   }
 }
