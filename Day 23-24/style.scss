@@ -139,6 +139,7 @@ main {
         width: 100%;
         border-radius: 10px;
         object-fit: cover;
+        object-position: center;
       }
     }
     #bottom {
@@ -147,6 +148,69 @@ main {
       gap: 2rem;
       border-radius: 10px;
       @include felx_column(4rem);
+
+      #text {
+        h1 {
+          font-size: 2.3rem;
+          font-family: head;
+          font-weight: 500;
+          text-transform: uppercase;
+        }
+        #paragraphs {
+          p {
+            font-size: 1.25rem;
+            opacity: 0.6;
+            line-height: 2rem;
+          }
+        }
+      }
+    }
+    #bottom > p {
+      font-size: 0.85rem;
+      font-weight: 600;
+      opacity: 0.9;
+    }
+  }
+  section.view4 {
+    width: 100%;
+    padding: 1rem;
+    @include felx_column(1rem);
+
+    #top {
+      img {
+        width: 100%;
+        border-radius: 10px;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+    #bottom {
+      background-color: #1e1e1e;
+      padding: 2rem;
+      gap: 2rem;
+      border-radius: 10px;
+      @include felx_column(4rem);
+
+      #text {
+        h1 {
+          font-size: 2.3rem;
+          font-family: head;
+          font-weight: 500;
+          text-transform: uppercase;
+        }
+        #paragraphs {
+          p {
+            font-size: 1.25rem;
+            opacity: 0.6;
+            line-height: 2rem;
+          }
+        }
+      }
+    }
+    #bottom > p {
+      font-size: 0.85rem;
+      font-weight: 600;
+      opacity: 0.9;
     }
   }
 }
@@ -183,6 +247,56 @@ main {
           h1 {
             font-size: 3.5rem;
             font-weight: 600;
+          }
+        }
+      }
+    }
+    section.view3 {
+      flex-direction: row-reverse;
+      padding: 1rem 2rem;
+
+      #top,
+      #bottom {
+        width: 50%;
+      }
+      #bottom {
+        justify-content: space-between;
+        padding: 3rem;
+
+        #text {
+          h1 {
+            font-size: 2.5rem;
+            padding-bottom: 1rem;
+          }
+          #paragraphs {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          }
+        }
+      }
+    }
+    section.view4 {
+      flex-direction: row;
+      padding: 1rem 2rem;
+
+      #top,
+      #bottom {
+        width: 50%;
+      }
+      #bottom {
+        justify-content: space-between;
+        padding: 3rem;
+
+        #text {
+          h1 {
+            font-size: 2.5rem;
+            padding-bottom: 1rem;
+          }
+          #paragraphs {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
           }
         }
       }
