@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+main {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    to right bottom,
+    rgba(0, 0, 0, 0.959),
+    rgba(0, 0, 0, 0.842),
+    rgba(0, 0, 0, 0.938)
+  );
+}
+section {
+  height: 100%;
+  width: 35%;
+  background: #000;
+  margin: auto;
+}
+.allReels {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.reel {
+  height: 100%;
+  width: 100%;
+}
+.reel video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.reel .bottom-bar {
+  width: 100%;
+  position: absolute;
+  background: linear-gradient(rgba(0, 0, 0, 0.637), rgba(0, 0, 0, 0.116));
+  bottom: 0%;
+}
+.bottom-bar .profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 10px;
+}
+.bottom-bar .profile img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.bottom-bar .profile h4 {
+  color: white;
+  font: system-ui;
+  font-size: 20px;
+}
+.follow {
+  background-color: transparent;
+  color: white;
+  font: 14px system-ui;
+  padding: 1px 9px;
+  border: white solid 2px;
+  border-radius: 12px;
+}

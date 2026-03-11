@@ -1,0 +1,33 @@
+:root {
+  --primary: #ffedfa;
+  --secondary: #ffb8e0;
+  --tri1: #ec7fa9;
+  --tri2: #be5985;
+}
+
+@font-face {
+  font-family: incon;
+  src: url(./Inconsolata-Light.ttf);
+  font-weight: 300;
+}
+@font-face {
+  font-family: incon;
+  src: url(./Inconsolata-Regular.ttf);
+  font-weight: 500;
+}
+@font-face {
+  font-family: incon;
+  src: url(./Inconsolata-Bold.ttf);
+  font-weight: 700;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: incon;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
