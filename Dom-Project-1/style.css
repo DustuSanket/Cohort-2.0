@@ -31,3 +31,22 @@ body {
   height: 100%;
   width: 100%;
 }
+.main {
+  width: 100%;
+  height: 100%;
+  background-color: var(--secondary);
+}
+section.allElems {
+  height: 100%;
+  width: 100%;
+  padding: 30px 40px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 20px;
+}
+.elems {
+  background-color: var(--primary);
+  border-radius: 15px;
+  padding: 30px 40px;
+}
