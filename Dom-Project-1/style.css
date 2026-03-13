@@ -48,5 +48,33 @@ section.allElems {
 .elems {
   background-color: var(--primary);
   border-radius: 15px;
-  padding: 30px 40px;
+  /* padding: 30px 40px; */
+  height: 400px;
+  width: 280px;
+  position: relative;
+  transition: all ease 0.15s;
+  overflow: hidden;
+}
+.elems img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.elems h2 {
+  color: var(--primary);
+  font-weight: 500;
+  position: absolute;
+  bottom: 4%;
+  right: 5%;
+}
+.elems:active {
+  scale: 0.97;
+}
+
+section.tabs {
+  background-color: var(--secondary);
+  height: 100%;
+  width: 100%;
+  display: none;
 }
