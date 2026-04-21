@@ -3,6 +3,7 @@
   --secondary: #ffb8e0;
   --tri1: #ec7fa9;
   --tri2: #be5985;
+  --done: rgba(255, 73, 27, 0.808);
 }
 
 @font-face {
@@ -94,5 +95,106 @@ section.tabs {
   top: 5%;
 }
 .return:active {
+  scale: 0.96;
+}
+.tdl-full h1 {
+  padding-top: 40px;
+  padding-left: 15px;
+  font-size: 50px;
+  font-weight: 900;
+}
+.tdl-full .container {
+  height: 80%;
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 10px;
+}
+.tdl-full .container .addTask {
+  height: 100%;
+  width: 33%;
+  background-color: var(--tri1);
+  border-radius: 20px;
+}
+
+.tdl-full .container .addTask form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 30px;
+}
+
+.container .addTask form input {
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  font-size: 20px;
+  background-color: var(--secondary);
+  width: 100%;
+}
+
+.container .addTask form textarea {
+  padding: 15px 20px;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  font-size: 20px;
+  background-color: var(--secondary);
+  width: 100%;
+}
+.container .addTask form button {
+  padding: 7px 20px;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  font-size: 20px;
+  font-weight: 700;
+  background-color: rgb(243, 10, 99);
+  width: 100%;
+  transition: all ease 0.3s;
+  cursor: pointer;
+}
+.container .addTask form button:active {
+  scale: 0.96;
+}
+
+.tdl-full .container .allTasks {
+  height: 100%;
+  width: 65%;
+  background-color: var(--tri1);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 30px;
+  overflow: auto;
+}
+.tdl-full .container .allTasks .tasks {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 28px;
+  background-color: var(--secondary);
+  padding: 15px 20px;
+  border-radius: 7px;
+  margin-bottom: 15px;
+}
+
+.tasks button {
+  background-color: var(--done);
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tasks button:active {
   scale: 0.96;
 }
