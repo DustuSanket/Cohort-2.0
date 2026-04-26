@@ -3,7 +3,8 @@
   --secondary: #ffb8e0;
   --tri1: #ec7fa9;
   --tri2: #be5985;
-  --done: rgba(255, 73, 27, 0.808);
+  --dlt: rgba(255, 61, 27, 0.904);
+  --done: rgba(16, 196, 0, 0.87);
 }
 
 @font-face {
@@ -183,9 +184,10 @@ section.tabs {
   padding: 15px 20px;
   border-radius: 7px;
   margin-bottom: 15px;
+  transition: all ease 0.2s;
 }
 
-.tasks button {
+.tasks .markDone {
   background-color: var(--done);
   padding: 10px 16px;
   border-radius: 10px;
@@ -194,7 +196,19 @@ section.tabs {
   font-weight: 600;
   cursor: pointer;
 }
+.tasks .dlt-btn {
+  background-color: var(--dlt);
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
 
+.tasks button:hover {
+  scale: 1.02;
+}
 .tasks button:active {
   scale: 0.96;
 }
