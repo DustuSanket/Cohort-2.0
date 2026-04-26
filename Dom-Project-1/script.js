@@ -17,7 +17,7 @@ function openContainer() {
 openContainer();
 
 function toDoList() {
-  var currentTasks = [];
+  let currentTasks = [];
   function renderTask() {
     localStorage.setItem("currentTasks", JSON.stringify(currentTasks));
 
