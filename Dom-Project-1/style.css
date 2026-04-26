@@ -5,6 +5,9 @@
   --tri2: #be5985;
   --dlt: rgba(255, 61, 27, 0.904);
   --done: rgba(16, 196, 0, 0.87);
+  --task-done-bg: rgba(16, 196, 0, 0.514);
+  --btn-disabled-bg: #7b9676;
+  --btn-disabled-text: #e0e0e0;
 }
 
 @font-face {
@@ -211,4 +214,18 @@ section.tabs {
 }
 .tasks button:active {
   scale: 0.96;
+}
+.tdl-full .container .allTasks .tasks.task-completed {
+  background-color: var(--task-done-bg);
+}
+
+.tasks .markDone:disabled {
+  background-color: var(--btn-disabled-bg);
+  color: var(--btn-disabled-text);
+  cursor: not-allowed;
+}
+
+.tasks .markDone:disabled:hover,
+.tasks .markDone:disabled:active {
+  scale: 1;
 }
