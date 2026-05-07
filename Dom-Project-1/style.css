@@ -229,3 +229,47 @@ section.tabs {
 .tasks .markDone:disabled:active {
   scale: 1;
 }
+
+.dPlanner-full h1 {
+  padding-top: 40px;
+  padding-left: 15px;
+  font-size: 50px;
+  font-weight: 900;
+}
+.dPlanner-full .dayPlan {
+  background-color: var(--tri1);
+  height: 85%;
+  margin-top: 40px;
+  width: 100%;
+  border-radius: 11px;
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  overflow: auto;
+  justify-content: space-between;
+}
+.dPlanner-full .dayPlan .dpTime {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 49%;
+  margin-bottom: 14px;
+}
+.dayPlan .dpTime p {
+  position: absolute;
+  top: 10%;
+  left: 2%;
+  font-size: 20px;
+  font-weight: 500;
+}
+.dayPlan .dpTime input {
+  padding: 20px 40px;
+  width: 100%;
+  background-color: var(--tri2);
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 30px;
+  padding-top: 30px;
+}

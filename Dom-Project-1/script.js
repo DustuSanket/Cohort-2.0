@@ -87,3 +87,31 @@ function toDoList() {
   });
 }
 toDoList();
+
+function dailyPlanner() {
+  let dayPlanData = JSON.parse(localStorage.getItem("dayPlanData")) || {};
+  let hours = Array.from({ length: 18 }, (elem, idx) => {
+    return `${6 + idx}:00 - ${7 + idx}:00`;
+  });
+
+  let dayPlan = document.querySelector(".dayPlan");
+  let daySum = "";
+
+  hours.forEach(function (elem, idx) {
+    let savedData = dayPlanData[idx] || "";
+    daySum += `<div class="dpTime">
+  <p>${elem}</p>
+  <input id=${idx} type="text" placeholder="..." value="${savedData}" />
+  </div>`;
+  });
+  dayPlan.innerHTML = daySum;
+
+  let dpTimeInput = document.querySelectorAll(".dpTime input");
+  dpTimeInput.forEach(function (elem) {
+    elem.addEventListener("input", function () {
+      dayPlanData[elem.id] = elem.value;
+      localStorage.setItem("dayPlanData", JSON.stringify(dayPlanData));
+    });
+  });
+}
+dailyPlanner();
