@@ -115,3 +115,17 @@ function dailyPlanner() {
   });
 }
 dailyPlanner();
+
+function DailyQuotes() {
+  let quoteText = document.querySelector(".quote-text");
+  let quoteAuthor = document.querySelector(".quote-author");
+  async function quoteFetch() {
+    let response = await fetch("https://dummyjson.com/quotes/random");
+    let quotesData = await response.json();
+
+    quoteText.innerHTML = quotesData.quote;
+    quoteAuthor.innerHTML = quotesData.author;
+  }
+  quoteFetch();
+}
+DailyQuotes();

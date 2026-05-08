@@ -8,6 +8,10 @@
   --task-done-bg: rgba(16, 196, 0, 0.514);
   --btn-disabled-bg: #7b9676;
   --btn-disabled-text: #e0e0e0;
+  --quote-card-bg: var(--primary);
+  --quote-bg-mark: var(--secondary);
+  --quote-text-main: #1a1a1a;
+  --quote-text-author: var(--tri2);
 }
 
 @font-face {
@@ -272,4 +276,82 @@ section.tabs {
   outline: none;
   font-size: 30px;
   padding-top: 30px;
+}
+.quotes-full > h1 {
+  padding-top: 40px;
+  padding-left: 15px;
+  font-size: 50px;
+  font-weight: 900;
+}
+
+.quote-center-wrapper {
+  height: 80%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.quoteContainer {
+  position: relative;
+  max-width: 850px;
+  width: 100%;
+  background-color: var(--quote-card-bg);
+  padding: 80px 60px;
+  border-radius: 30px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06);
+  text-align: center;
+  z-index: 1;
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.quoteContainer::before {
+  content: "“";
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18rem;
+  font-family: incon;
+  color: var(--quote-bg-mark);
+  line-height: 1;
+  z-index: -1;
+  opacity: 0.6;
+}
+
+.quote-text {
+  font-family: incon;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 700;
+  color: var(--quote-text-main);
+  margin: 0 0 40px 0;
+  padding: 0;
+  line-height: 1.4;
+  position: relative;
+  z-index: 2;
+}
+
+.quote-author {
+  font-family: incon;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--quote-text-author);
+  text-transform: uppercase;
+  letter-spacing: 4px; /* Wider tracking looks more elegant */
+  margin: 0;
+  display: inline-block;
+}
+
+.quote-author::before {
+  content: "";
+  display: inline-block;
+  width: 30px;
+  height: 3px;
+  background-color: var(--quote-text-author);
+  vertical-align: middle;
+  margin-right: 15px;
+  border-radius: 2px;
 }
