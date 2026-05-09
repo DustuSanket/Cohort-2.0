@@ -129,3 +129,63 @@ function DailyQuotes() {
   quoteFetch();
 }
 DailyQuotes();
+
+let totalSeconds = 25 * 60;
+
+let timer = document.querySelector(".pomodoro-timer #time");
+let headingTxt = document.querySelector(".pomodoro-timer #heading");
+let startTimer = document.querySelector(".pomodoro-timer .start-timer");
+let pauseTimer = document.querySelector(".pomodoro-timer .pause-timer");
+let resetTimer = document.querySelector(".pomodoro-timer .reset-timer");
+let timerInterval = null;
+let isWorking = true;
+
+function updateTimer() {
+  let minutes = Math.floor(totalSeconds / 60);
+  let seconds = totalSeconds % 60;
+  timer.innerHTML = `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+}
+updateTimer();
+
+startTimer.addEventListener("click", function () {
+  if (isWorking) {
+    totalSeconds = 25 * 60;
+    timerInterval = setInterval(() => {
+      if (totalSeconds > 0) {
+        totalSeconds--;
+      } else {
+        clearInterval(timerInterval);
+        isWorking = false;
+        setTimeout(() => {
+          headingTxt.innerHTML = "Break Time!";
+          timer.innerHTML = "05:00";
+        }, 210);
+      }
+      updateTimer();
+    }, 1000);
+  } else {
+    totalSeconds = 5 * 60;
+    timerInterval = setInterval(() => {
+      if (totalSeconds > 0) {
+        totalSeconds--;
+      } else {
+        clearInterval(timerInterval);
+        isWorking = true;
+        setTimeout(() => {
+          headingTxt.innerHTML = "Keep Working!";
+          timer.innerHTML = "25:00";
+        }, 210);
+      }
+      updateTimer();
+    }, 1000);
+  }
+});
+pauseTimer.addEventListener("click", function () {
+  clearInterval(timerInterval);
+});
+resetTimer.addEventListener("click", function () {
+  clearInterval(timerInterval);
+  totalSeconds = 25 * 60;
+  updateTimer();
+  headingTxt.innerHTML = "Start Working!";
+});
