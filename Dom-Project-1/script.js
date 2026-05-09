@@ -116,7 +116,7 @@ function dailyPlanner() {
 }
 dailyPlanner();
 
-function DailyQuotes() {
+function dailyQuotes() {
   let quoteText = document.querySelector(".quote-text");
   let quoteAuthor = document.querySelector(".quote-author");
   async function quoteFetch() {
@@ -128,64 +128,88 @@ function DailyQuotes() {
   }
   quoteFetch();
 }
-DailyQuotes();
+dailyQuotes();
 
-let totalSeconds = 25 * 60;
+function pomodoroTimer() {
+  let totalSeconds = 25 * 60;
 
-let timer = document.querySelector(".pomodoro-timer #time");
-let headingTxt = document.querySelector(".pomodoro-timer #heading");
-let startTimer = document.querySelector(".pomodoro-timer .start-timer");
-let pauseTimer = document.querySelector(".pomodoro-timer .pause-timer");
-let resetTimer = document.querySelector(".pomodoro-timer .reset-timer");
-let timerInterval = null;
-let isWorking = true;
+  let timer = document.querySelector(".pomodoro-timer #time");
+  let headingTxt = document.querySelector(".pomodoro-timer #heading");
+  let startTimer = document.querySelector(".pomodoro-timer .start-timer");
+  let pauseTimer = document.querySelector(".pomodoro-timer .pause-timer");
+  let resetTimer = document.querySelector(".pomodoro-timer .reset-timer");
 
-function updateTimer() {
-  let minutes = Math.floor(totalSeconds / 60);
-  let seconds = totalSeconds % 60;
-  timer.innerHTML = `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
-}
-updateTimer();
+  let timerInterval = null;
+  let isWorking = true;
+  let isRunning = false;
 
-startTimer.addEventListener("click", function () {
-  if (isWorking) {
-    totalSeconds = 25 * 60;
-    timerInterval = setInterval(() => {
-      if (totalSeconds > 0) {
-        totalSeconds--;
-      } else {
-        clearInterval(timerInterval);
-        isWorking = false;
-        setTimeout(() => {
-          headingTxt.innerHTML = "Break Time!";
-          timer.innerHTML = "05:00";
-        }, 210);
-      }
-      updateTimer();
-    }, 1000);
-  } else {
-    totalSeconds = 5 * 60;
-    timerInterval = setInterval(() => {
-      if (totalSeconds > 0) {
-        totalSeconds--;
-      } else {
-        clearInterval(timerInterval);
-        isWorking = true;
-        setTimeout(() => {
-          headingTxt.innerHTML = "Keep Working!";
-          timer.innerHTML = "25:00";
-        }, 210);
-      }
-      updateTimer();
-    }, 1000);
+  function updateTimer() {
+    let minutes = Math.floor(totalSeconds / 60);
+    let seconds = totalSeconds % 60;
+    timer.innerHTML = `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
   }
-});
-pauseTimer.addEventListener("click", function () {
-  clearInterval(timerInterval);
-});
-resetTimer.addEventListener("click", function () {
-  clearInterval(timerInterval);
-  totalSeconds = 25 * 60;
   updateTimer();
-  headingTxt.innerHTML = "Start Working!";
-});
+
+  startTimer.addEventListener("click", function () {
+    if (isRunning) return;
+
+    isRunning = true;
+
+    startTimer.style.opacity = "0.6";
+    startTimer.style.pointerEvents = "none";
+
+    timerInterval = setInterval(() => {
+      if (totalSeconds > 0) {
+        totalSeconds--;
+        updateTimer();
+      } else {
+        clearInterval(timerInterval);
+        isRunning = false;
+
+        startTimer.innerHTML = "Start";
+        startTimer.style.opacity = "1";
+        startTimer.style.pointerEvents = "auto";
+
+        setTimeout(() => {
+          if (isWorking) {
+            isWorking = false;
+            totalSeconds = 5 * 60;
+            headingTxt.innerHTML = "Break Time!";
+          } else {
+            isWorking = true;
+            totalSeconds = 25 * 60;
+            headingTxt.innerHTML = "Start Working!";
+          }
+
+          updateTimer();
+        }, 300);
+      }
+    }, 1000);
+  });
+
+  pauseTimer.addEventListener("click", function () {
+    if (!isRunning) return;
+
+    clearInterval(timerInterval);
+    isRunning = false;
+
+    startTimer.innerHTML = "Resume";
+    startTimer.style.opacity = "1";
+    startTimer.style.pointerEvents = "auto";
+  });
+
+  resetTimer.addEventListener("click", function () {
+    clearInterval(timerInterval);
+
+    isRunning = false;
+    isWorking = true;
+    totalSeconds = 25 * 60;
+
+    updateTimer();
+    headingTxt.innerHTML = "Start Working!";
+    startTimer.innerHTML = "Start";
+    startTimer.style.opacity = "1";
+    startTimer.style.pointerEvents = "auto";
+  });
+}
+pomodoroTimer();
