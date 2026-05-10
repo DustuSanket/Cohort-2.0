@@ -1,4 +1,5 @@
-// https://in.pinterest.com/pin/71987294040806481/
+// https://in.pinterest.com/pin/71987294040806481/auto:ip
+const wKey = "a037f59192aa471d86f50952261005";
 
 function openContainer() {
   const allElems = document.querySelectorAll(".elems");
@@ -213,3 +214,13 @@ function pomodoroTimer() {
   });
 }
 pomodoroTimer();
+
+async function weatherFetch() {
+  let response = await fetch(
+    `http://api.weatherapi.com/v1/current.json?key=${wKey}&q=auto:ip`,
+  );
+  let wData = await response.json();
+  console.log(wData.cuurent.temp_c);
+}
+
+weatherFetch();

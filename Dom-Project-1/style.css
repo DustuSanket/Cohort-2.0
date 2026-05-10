@@ -49,12 +49,40 @@ section.allElems {
   height: 100%;
   width: 100%;
   padding: 30px 40px;
+  overflow: auto;
+  position: absolute;
+}
+.allElems .all-features {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
   gap: 20px;
-  position: absolute;
 }
+.allElems header {
+  height: 400px;
+  width: 100%;
+  background-color: var(--tri2);
+  margin-bottom: 40px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px;
+}
+
+header .head-1 h1 {
+  font-size: 75px;
+}
+header .head-2 h2 {
+  font-size: 50px;
+}
+header .head-2 h4 {
+  font-size: 30px;
+}
+header .head-2 h3 {
+  font-size: 22px;
+}
+
 .elems {
   background-color: var(--primary);
   border-radius: 15px;
@@ -79,6 +107,9 @@ section.allElems {
 }
 .elems:active {
   scale: 0.97;
+}
+.elems:hover {
+  scale: 1.01;
 }
 
 section.tabs {
