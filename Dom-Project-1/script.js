@@ -1,4 +1,4 @@
-// https://in.pinterest.com/pin/71987294040806481/auto:ip
+// https://in.pinterest.com/pin/71987294040806481
 const wKey = "a037f59192aa471d86f50952261005";
 
 function openContainer() {
@@ -215,12 +215,79 @@ function pomodoroTimer() {
 }
 pomodoroTimer();
 
-async function weatherFetch() {
-  let response = await fetch(
-    `http://api.weatherapi.com/v1/current.json?key=${wKey}&q=auto:ip`,
-  );
-  let wData = await response.json();
-  console.log(wData.cuurent.temp_c);
-}
+function timeWeatherWidget() {
+  const temperature = document.querySelector(".head-2 h2");
+  const wCondition = document.querySelector(".head-2 h4");
+  const wind = document.querySelector(".head-2 .wind");
+  const pressure = document.querySelector(".head-2 .pressure");
+  const humidity = document.querySelector(".head-2 .humidity");
+  const clock = document.querySelector(".head-1 h1");
+  const dateClock = document.querySelector(".head-1 h2");
 
-weatherFetch();
+  async function weatherFetch() {
+    let response = await fetch(
+      `http://api.weatherapi.com/v1/current.json?key=${wKey}&q=auto:ip`,
+    );
+    let wData = await response.json();
+    temperature.innerHTML = `${Math.floor(wData.current.temp_c)}°C`;
+    wCondition.innerHTML = `${wData.current.condition.text}`;
+    wind.innerHTML = `Wind: ${wData.current.wind_kph} km/h`;
+    humidity.innerHTML = `Humidity: ${wData.current.humidity}%`;
+    pressure.innerHTML = `Pressure: ${wData.current.pressure_mb} mb`;
+  }
+  weatherFetch();
+  setInterval(
+    () => {
+      weatherFetch();
+    },
+    5 * 60 * 1000,
+  );
+
+  function dateTime() {
+    const allDays = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+    const allMonths = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ];
+    let date = new Date();
+    let day = date.getDate();
+    let month = allMonths[date.getMonth()];
+    let year = date.getFullYear();
+    let today = allDays[date.getDay()];
+    let hours = date.getHours();
+    let minutes = date.getMinutes();
+    let seconds = date.getSeconds();
+
+    dateClock.innerHTML = `${month} ${day}, ${year}`;
+    clock.innerHTML = `${today},${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+  }
+  setInterval(() => {
+    dateTime();
+  }, 1000);
+
+  const wRefreshBtn = document.querySelector(".head-1 #weather-refresh");
+
+  wRefreshBtn.addEventListener("click", () => {
+    weatherFetch();
+    console.log("Fetching Weather...");
+  });
+}
+timeWeatherWidget();

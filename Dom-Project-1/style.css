@@ -59,9 +59,11 @@ section.allElems {
   gap: 20px;
 }
 .allElems header {
-  height: 400px;
+  /* height: 400px; */
   width: 100%;
-  background-color: var(--tri2);
+  background-image: url(https://images.unsplash.com/photo-1541119638723-c51cbe2262aa?q=80&w=1473&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-size: cover;
+  /* background-position: center; */
   margin-bottom: 40px;
   border-radius: 20px;
   display: flex;
@@ -69,18 +71,47 @@ section.allElems {
   justify-content: space-between;
   padding: 40px;
 }
+header {
+  position: relative;
+}
+.head-1 button {
+  position: absolute;
+  top: 4%;
+  left: 1%;
+  font-size: 20px;
+  border: none;
+  padding: 4px 5px;
+  border-radius: 50%;
+  outline: none;
+  font-weight: 570;
+  opacity: 0.8;
+}
+.head-1 button:hover {
+  opacity: 1;
+  scale: 1.05;
+}
+.head-1 button:active {
+  scale: 0.98;
+}
 
 header .head-1 h1 {
   font-size: 75px;
+  font-weight: 700;
+  margin-bottom: 1px;
 }
 header .head-2 h2 {
-  font-size: 50px;
+  font-size: 80px;
+  font-weight: 600;
 }
 header .head-2 h4 {
   font-size: 30px;
+  font-weight: 550;
+  margin-bottom: 15px;
 }
-header .head-2 h3 {
+.head-2 h3 {
   font-size: 22px;
+  font-weight: 500;
+  opacity: 0.8;
 }
 
 .elems {
