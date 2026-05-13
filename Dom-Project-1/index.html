@@ -1,118 +1,120 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Productivity Dashboard</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="shortcut icon"
-      href="./images/apple-touch-icon.png"
-      type="image/x-icon"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div class="main">
-      <section class="allElems">
-        <div class="all-features">
-          <header>
-            <div class="head-1">
-              <button id="weather-refresh">
-                <i class="ri-loop-left-fill"></i>
-              </button>
-              <h2></h2>
-              <h1></h1>
-            </div>
-            <div class="head-2">
-              <h2>Fetching...</h2>
-              <h4></h4>
-              <h3 class="pressure"></h3>
-              <h3 class="humidity"></h3>
-              <h3 class="wind"></h3>
-            </div>
-          </header>
-          <div class="todo elems" id="0">
-            <img src="./images/To-Do List✨.jfif" alt="" />
-            <h2>To do list</h2>
-          </div>
-          <div class="daily elems" id="1">
-            <img
-              src="https://images.unsplash.com/photo-1623265300797-4a3541e29a60?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt=""
-            />
-            <h2>Daily Planner</h2>
-          </div>
-          <div class="quotes elems" id="2">
-            <img
-              src="https://i.pinimg.com/1200x/2b/c5/f7/2bc5f7bc0e9aaed92447df3c847722b8.jpg"
-              alt=""
-            />
-            <h2>Daily quotes</h2>
-          </div>
-          <div class="pomo elems" id="3">
-            <img
-              src="https://plus.unsplash.com/premium_photo-1669323926612-c1e3bdc1c7fb?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt=""
-            />
-            <h2>Pomodoro Timer</h2>
-          </div>
-      </section>
-      <section class="tabs tdl-full" id="0">
-        <h1>Your Task List</h1>
-        <div class="container">
-          <div class="addTask">
-            <form>
-              <input type="text" placeholder="Enter task name" />
-              <textarea
-                placeholder="Enter task details"
-                name=""
-                id=""
-              ></textarea>
-              <button>Add Task</button>
-            </form>
-          </div>
-          <div class="allTasks"></div>
-        </div>
-        <button class="return" id="0"><i class="ri-home-7-line"></i></button>
-      </section>
-      <section class="tabs dPlanner-full" id="1">
-        <button class="return" id="1"><i class="ri-home-7-line"></i></button>
-        <h1>Plan your day to be more productive</h1>
-        <div class="dayPlan"></div>
-      </section>
-      <section class="tabs quotes-full" id="2">
-        <button class="return" id="2"><i class="ri-home-7-line"></i></button>
-        <h1>Daily Quotes</h1>
-        <div class="quote-center-wrapper">
-          <div class="quoteContainer">
-            <h1 class="quote-text"></h1>
-            <h2 class="quote-author"></h2>
-          </div>
-        </div>
-      </section>
-      <section class="tabs pomodoro-full" id="3">
-        <button class="return" id="3"><i class="ri-home-7-line"></i></button>
-        <h2>Stay Focused!</h2>
 
-        <div class="pomodoro-timer">
-          <div class="timer-card">
-            <h1 id="heading">Start Working!</h1>
-            <h1 id="time">25:00</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Productivity Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" href="./images/apple-touch-icon.png" type="image/x-icon" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
 
-            <div class="timer-controls">
-              <button class="start-timer">Start</button>
-              <button class="pause-timer">Pause</button>
-              <button class="reset-timer">Reset</button>
-            </div>
+<body>
+  <div class="main">
+    <section class="allElems">
+      <nav class="top-navbar">
+        <div class="nav-brand">
+          <span class="nav-icon"><img src="./images/apple-touch-icon.png" alt=""></span>
+          <h2>Productivity Dashboard</h2>
+        </div>
+        <div class="nav-controls">
+        
+          <button class="nav-btn" id="palette-btn" title="Cycle Color Palette">
+            <i class="ri-palette-line" style="transition: transform 0.3s ease;"></i>
+          </button>
+          <button class="nav-btn" id="theme-toggle" title="Toggle Dark Mode">
+            <i class="ri-moon-line"></i>
+          </button>
+        </div>
+      </nav>
+      <div class="all-features">
+        <header>
+          <button id="weather-refresh">
+            <i class="ri-loop-left-fill"></i>
+          </button>
+          <div class="head-1">
+            <h2></h2>
+            <h1></h1>
+          </div>
+          <div class="head-2">
+            <h2>Fetching...</h2>
+            <h4></h4>
+            <h3 class="pressure"></h3>
+            <h3 class="humidity"></h3>
+            <h3 class="wind"></h3>
+          </div>
+        </header>
+        <div class="todo elems" id="0">
+          <img src="./images/To-Do List✨.jfif" alt="" />
+          <h2>To do list</h2>
+        </div>
+        <div class="daily elems" id="1">
+          <img
+            src="https://images.unsplash.com/photo-1623265300797-4a3541e29a60?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="" />
+          <h2>Daily Planner</h2>
+        </div>
+        <div class="quotes elems" id="2">
+          <img src="https://i.pinimg.com/1200x/2b/c5/f7/2bc5f7bc0e9aaed92447df3c847722b8.jpg" alt="" />
+          <h2>Daily quotes</h2>
+        </div>
+        <div class="pomo elems" id="3">
+          <img
+            src="https://plus.unsplash.com/premium_photo-1669323926612-c1e3bdc1c7fb?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="" />
+          <h2>Pomodoro Timer</h2>
+        </div>
+    </section>
+    <section class="tabs tdl-full" id="0">
+      <h1>Your Task List</h1>
+      <div class="container">
+        <div class="addTask">
+          <form>
+            <input type="text" placeholder="Enter task name" />
+            <textarea placeholder="Enter task details" name="" id=""></textarea>
+            <button>Add Task</button>
+          </form>
+        </div>
+        <div class="allTasks"></div>
+      </div>
+      <button class="return" id="0"><i class="ri-home-7-line"></i></button>
+    </section>
+    <section class="tabs dPlanner-full" id="1">
+      <button class="return" id="1"><i class="ri-home-7-line"></i></button>
+      <h1>Plan your day to be more productive</h1>
+      <div class="dayPlan"></div>
+    </section>
+    <section class="tabs quotes-full" id="2">
+      <button class="return" id="2"><i class="ri-home-7-line"></i></button>
+      <h1>Daily Quotes</h1>
+      <div class="quote-center-wrapper">
+        <div class="quoteContainer">
+          <h1 class="quote-text"></h1>
+          <h2 class="quote-author"></h2>
+        </div>
+      </div>
+    </section>
+    <section class="tabs pomodoro-full" id="3">
+      <button class="return" id="3"><i class="ri-home-7-line"></i></button>
+      <h2>Stay Focused!</h2>
+
+      <div class="pomodoro-timer">
+        <div class="timer-card">
+          <h1 id="heading">Start Working!</h1>
+          <h1 id="time">25:00</h1>
+
+          <div class="timer-controls">
+            <button class="start-timer">Start</button>
+            <button class="pause-timer">Pause</button>
+            <button class="reset-timer">Reset</button>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
+  </div>
 
-    <script src="script.js"></script>
-  </body>
+  <script src="script.js"></script>
+</body>
+
 </html>
